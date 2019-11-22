@@ -7,15 +7,15 @@ ZIP Package shrinking (Python)
 
 ## Dependencies
 
-Linux OS
-Python 3.6
-Linux grep+sed (a few os calls to accelerate porcessing of 30MB+ XML files)
+Linux OS  
+Python 3.6  
+Linux grep+sed (a few os calls to accelerate porcessing of 30MB+ XML files)  
 
-Linux env: Bash
-Linux commands: zip unzip dos2unix xmllint
-Python libraries: json, ZipFile, glob, csv, os
+Linux env: Bash  
+Linux commands: zip unzip dos2unix xmllint  
+Python libraries: json, ZipFile, glob, csv, os  
 
 ## Instructions
 
-Alter the source for XML and ZIP files inside each file
-Execute the scripts under the numbered order
+Alter the source for XML and ZIP files inside each file  
+Execute the scripts under the numbered order  
