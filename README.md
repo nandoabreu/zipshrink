@@ -9,9 +9,11 @@ ZIP Package shrinking (Python)
 
 Linux OS
 Python 3.6
-Linux Bash (a few os calls to accelerate porcessing of 30MB+ XML files)
+Linux grep+sed (a few os calls to accelerate porcessing of 30MB+ XML files)
 
-Py libraries: json, ZipFile, glob, csv, os
+Linux env: Bash
+Linux commands: zip unzip dos2unix xmllint
+Python libraries: json, ZipFile, glob, csv, os
 
 ## Instructions
 

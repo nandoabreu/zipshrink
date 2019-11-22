@@ -1,7 +1,6 @@
 #! /usr/bin/python3
 
-npDir = "/Host/Temp/STORE"
-#repositoryDir = npDir + "/images"
+npDir = "sample"
 csvFile = "/tmp/repositoryResults.csv"
 imgFiles = { "reserved.csv": "APP", "store-db.xml": "APP", "workflow.xml": "APP", "screen.xml": "SCREEN", "product-db.xml": "PRODUCT" }
 

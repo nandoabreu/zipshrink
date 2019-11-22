@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
-npDir = "/Host/Temp/STORE"
-repositoryDir = npDir + "/images"
+npDir = "sample"
+repositoryDir = npDir #+ "/images"
 csvFile = "/tmp/repositoryResults.csv"
 
 header = [ "IMAGE", "1st SOURCE", "FULL SIZE", "COMPRESSED SIZE", "USAGE", "APP", "SCREEN", "PRODUCT" ]
