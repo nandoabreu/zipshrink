@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:noNamespaceSchemaLocation="/RFM2/RFM2PackageConf/PackageXSD/2.1/product-db.xsd">
+  <Product statusCode="ACTIVE">
+    <ProductCode>61514</ProductCode>
+    <CustomParameters>
+      <Parameter name="CFOP" value="5102"/>
+    </CustomParameters>
+  </Product>
+  <Product statusCode="ACTIVE">
+    <ProductCode>9079</ProductCode>
+    <Presentation>
+      <ImgName>chocolate quente.png</ImgName>
+      <Title>Chocolate Quente</Title>
+    </Presentation>
+    <CustomParameters>
+      <Parameter name="CFOP" value="5102"/>
+      <Parameter name="NCM" value="0404.90.00"/>
+    </CustomParameters>
+  </Product>
+  <Product statusCode="ACTIVE">
+    <ProductCode>4342</ProductCode>
+    <Presentation>
+      <BitmapName>cafe chantilly.png</BitmapName>
+      <Title>Cafe Chantilly</Title>
+    </Presentation>
+  </Product>
+  <Product statusCode="ACTIVE" productClass="PRODUCT">
+    <ProductCode>2050</ProductCode>
+    <Presentation>
+      <BitmapName>capucmix.png</BitmapName>
+      <Title>Capuccino\nMix</Title>
+    </Presentation>
+  </Product>
+  </Product>
+  <Product>
+    <ProductCode>2615</ProductCode>
+    <Presentation>
+      <ImageName>Croassant-Chocolate.png</ImageName>
+      <Title>Croissant Chocolate</Title>
+    </Presentation>
+  </Product>
+</Products>
