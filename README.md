@@ -17,5 +17,5 @@ Python libraries: json, ZipFile, glob, csv, os
 
 ## Instructions
 
-Alter the source for XML and ZIP files inside each file  
-Execute the scripts under the numbered order  
+Alter the source for XML and ZIP files inside each file.  
+Execute the scripts under the numbered order.  
