@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
-npDir = "sample"
-repositoryDir = npDir #+ "/images"
+npDir = "/Host/Temp/STORE"
+repositoryDir = npDir + "/images"
 tmpDir = npDir + "/tmp"
 
 import os
