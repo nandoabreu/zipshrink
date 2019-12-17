@@ -1,32 +1,24 @@
 #! /usr/bin/python3
 
-npDir = "/Host/Temp/STORE"
-npDir = "DATA"
-#repositoryDir = npDir + "/images"
-csvFile = "/tmp/repositoryResults.csv"
-imgFiles = { "reserved.csv": "APP", "store-db.xml": "APP", "workflow.xml": "APP", "screen.xml": "SCREEN", "product-db.xml": "PRODUCT" }
-
-import json
-def printDic(dic):
-    print(json.dumps(dic, indent = 4))
+import f0_globalization as f0
 
 import csv
 csv.register_dialect("sep", delimiter = ";")
-obj = open(csvFile, mode = "r", encoding = "utf8")
-header = obj.readline().strip().split(";")
+obj = open(f0.csvFile, mode = "r", encoding = "utf8")
+csvHeader = obj.readline().strip().split(";")
 
-dicKey = header[0]
+dicKey = csvHeader[0]
 csvDic = {}
-with open(csvFile, "r", encoding="utf8") as obj:
+with open(f0.csvFile, "r", encoding="utf8") as obj:
     readFrom = csv.DictReader(obj, dialect = "sep")
     for row in readFrom:
         rowKey = row.get(dicKey)
         csvDic[rowKey.lower()] = {"IMAGE": rowKey}
-        for i in range(1, len(header)):
-            key = header[i]
+        for i in range(1, len(csvHeader)):
+            key = csvHeader[i]
             val = row[key]
             csvDic[rowKey.lower()].update({key: val})
-#printDic(csvDic)
+#f0.printDic(csvDic)
 
 import os
 def readFile(filename, status, group):
@@ -47,7 +39,7 @@ def readFile(filename, status, group):
     titleLine = False
     k = 0
     for line in os.popen(shCmd).read().splitlines():
-        print("##### parsing line", line)
+        #print("##### parsing line", line)
         k += 1
         if group == "APP":
             if filename[i:] == "reserved.csv": tid = "Reserved"
@@ -92,12 +84,12 @@ def readFile(filename, status, group):
 
 
 import glob
-for filename in imgFiles:
+for filename in f0.imgFiles:
     status = "Used"
     if filename == "reserved.csv": status = "Reserved"
-    group = imgFiles[filename]
+    group = f0.imgFiles[filename]
 
-    files = [f for f in glob.glob(npDir + "/*" + filename, recursive = False)]
+    files = [f for f in glob.glob(f0.npDir + "/*" + filename, recursive = False)]
     for imgFile in files:
         readFile(imgFile, status, group)
 
@@ -108,11 +100,11 @@ for line in csvDic:
         if csvDic[line.lower()][group]:
             csvDic[line.lower()][group] = " ".join(csvDic[line.lower()][group].keys())
 
-#printDic(csvDic)
+#f0.printDic(csvDic)
 
 ########################################################### TENTAR GRAVAR EM UM TMP FILE
-obj = open(csvFile + ".tmp", mode="w")
-writeTo = csv.DictWriter(obj, delimiter=";", fieldnames = header)
+obj = open(f0.csvFile + ".tmp", mode="w")
+writeTo = csv.DictWriter(obj, delimiter=";", fieldnames = csvHeader)
 writeTo.writeheader()
 
 for img in csvDic:
@@ -123,7 +115,7 @@ for img in csvDic:
     writeTo.writerow(rowDic)
 
 obj.close()
-os.replace(csvFile + ".tmp", csvFile)
+os.replace(f0.csvFile + ".tmp", f0.csvFile)
 
 
 #tmpObj.close()
